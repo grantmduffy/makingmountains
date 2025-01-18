@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Making Mountains</title>
+    <link rel="icon" type="image/svg+xml" href="makingmountains_logo_square.svg">
+    <style>
+        :root {
+            --background-color: #000000ad;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-image: url('https://cdn.shopify.com/s/files/1/0584/6761/4781/files/PXL_20221005_222050972.jpg?v=1665260359');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+        }
+        a {
+            color: #dcc56a;
+        }
+        .big-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(to bottom, #ffe2b761 0px, var(--background-color) 200px);
+        }
+        .container {
+            width: 100%;
+            color:rgb(255, 255, 255);
+        }
+        .hero {
+            background-size: contain;
+            width: 100%;
+            padding-bottom: 30px;
+            text-align: center;
+            color: rgb(255, 255, 255);
+            z-index: 1;
+        }
+        .logo {
+            filter: invert() drop-shadow(5px 10px 5px #24201a);
+            width: 400px;
+            margin: -40px;
+        }
+        .section {
+            padding: 40px 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        .portrait {
+            width: 100%;
+            /* max-height: 800px;
+            max-width: 400px; */
+            border-radius: 30px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .link-btn {
+            color: white; 
+            text-decoration: none; 
+            padding: 10px 20px; 
+            margin: 0 10px; 
+            border: 2px solid white; 
+            border-radius: 5px; 
+            transition: all 0.3s ease;
+        }
+        .carousel {
+            position: relative;
+            width: 100%;
+        }
+        .carousel-container {
+            width: 100%;
+            overflow: hidden;
+        }
+        .carousel-img {
+            width: 100%;
+            display: none;
+            border-radius: 30px;
+        }
+        .carousel-img:first-child {
+            display: block;
+        }
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            padding: 16px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+        .prev { left: 10px; }
+        .next { right: 10px; }
+        @media (max-width: 600px) {
+            .section {
+                padding: 5px 0;
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="big-container">
+        <div class="hero">
+            <img src="makingmountains_logo.svg" alt="Making Mountains Logo" class="logo">
+        </div>
+
+        <div class="container">
+            <section class="section">
+                <img src="portrait.jpg" alt="Founder Portrait" class="portrait">
+                <div>
+                    <h2>About Me</h2>
+                    <p>Hello! My name is Grant, and I’m the creator behind Making Mountains. Growing up in the Pacific Northwest, 
+                        I’ve always had a deep connection to the mountains and the great outdoors. Whether skiing deep powder, 
+                        hiking forested trails, or simply admiring the rugged peaks, I’ve always found inspiration in nature’s 
+                        grandeur.</p>
+                    <p>By day, I work as a data scientist and machine learning engineer, but my true passion lies in using my 
+                        skills to bring wonder into the world through creation. Making Mountains began as a personal project, 
+                        blending my love of technology, creativity, and the outdoors but quickly turned into something bigger when 
+                        I realized how much joy these creations brought to the people around me.</p>
+                    <p>There’s nothing quite like seeing someone’s face light up as they hold a 3D-printed piece of their favorite 
+                        mountain—a sentimental place filled with memories. From tracing a beloved climbing route to marveling at 
+                        the contours of a familiar peak, these tangible mementos spark stories, nostalgia, and connection. My goal 
+                        is to share that experience with you, bringing the beauty of the mountains into your hands and homes.</p>
+                    <p>I haven't found anything that can bring me back to a place quite like these mountains. The detail and feel 
+                        is exquisite. They are made to order so if you want one made custom, just send me an email or DM to inquire about 
+                        a particular region!</p>
+                    <p>Follow me on <a href="https://www.instagram.com/making.mountains">instagram</a>, check out my <a href="https://store.makingmountains.com">online store</a> or send me an <a href="mailto:grant@makingmountains.com">email</a> with any inquiries. Thank you for 
+                        stopping by!</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <div>
+                    <h2>Quality</h2>
+                    <p>When I first started this project, I explored available tools for 3D printing topographical models, but I was 
+                        very underwhelmed. Nothing was able to achieve the level of detail and quality that I was looking for. I decided 
+                        to pursue idea of developing my own set of software and processes, and although it has been a long and 
+                        difficult journey, I am extremely proud of what I have achieved.</p>
+                    <p>I believe that my process has higher detail and quality than any other available on the market. Just compare my 
+                        intricate, faithful reproduction of every cravase and river to the coarse layer lines, tool paths, and facets 
+                        that plague traditional 3D printing and CNC methods. Trust me, the closer you look the more impressed you will be!</p>
+                </div>
+                <img src="detail.jpg" alt="Detail" class="portrait">
+            </section>
+
+            <section class="section">
+                <div class="carousel">
+                    <button class="carousel-btn prev" onclick="moveSlide(-1)">❮</button>
+                    <button class="carousel-btn next" onclick="moveSlide(1)">❯</button>
+                    <div class="carousel-container">
+                        <img src="printer.jpg" alt="Technology" class="carousel-img">
+                        <img src="3d_preview.png" alt="Technology" class="carousel-img">
+                        <img src="screenshot2.png" alt="Technology" class="carousel-img">
+                        <img src="screenshot1.png" alt="Technology" class="carousel-img">
+                    </div>
+                </div>
+                <script>
+                    let currentSlide = 0;
+                    const slides = document.querySelectorAll('.carousel-img');
+                    
+                    function moveSlide(direction) {
+                        slides[currentSlide].style.display = 'none';
+                        currentSlide = (currentSlide + direction + slides.length) % slides.length;
+                        slides[currentSlide].style.display = 'block';
+                    }
+                </script>
+                
+                <div>
+                    <h2>Mountain Making Technology</h2>
+                    <p>This section is for my fellow nerds... I have spent the last 5 years developing and perfecting the software and processes I use to make these mountains. 
+                        I use USGS 5-meter elevation data to 3D print a negative mold of the mountain. I have tried a lot of materials, 
+                        but so far, pouring the mountains out of plaster has given me the best detail and quality feel. After the plaster 
+                        sets, the mountain is demolded, dried, and touched up by hand. Simple enough? Like all good engineering projects, the devil 
+                        is in the detail.</p>
+                    <p>The software is the result of a massive body of work. The motivation behind the software is to maintain the full 
+                        5-meter level of detail of the source data. When I tried other tools to do this, they either noticeably downsampled the data 
+                        or slowed to a crawl when the detail was increased. Even my own attempt of generating a 3D model and slicing it in a 
+                        standard slicer was taking hours.</p>
+                    <p>I realized that to achieve my goals for this project, I would have to write my own slicer from scratch. The first 
+                        main hurdle was reverse engineering the proprietary file format used by my resin 3D printer. After that, I developed 
+                        an algorith for turning elevation data into machine code efficiently. Finally I created a user interface to be able to select 
+                        regions to print, adjust settings, and layout prints on the print bed. There are too many pieces to this software to describe here.
+                        Developing it requrired everything from parallel algorithms to computer graphics. In other words, a ton of fun!</p>
+                </div>
+                
+            </section>
+
+            <section style="text-align: center; margin-top: 20px;">
+                <a class='link-btn' href="https://makingmountains.com">Home</a>
+                <a class='link-btn' href="https://shop.makingmountains.com">Shop</a>
+                <a class='link-btn' href="https://www.instagram.com/making.mountains">Instagram</a>
+                <p>© 2025 Making Mountains</p>
+            </section>
+
+        </div>
+    </div>
+
+</body>
+</html>
